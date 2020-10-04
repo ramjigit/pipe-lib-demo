@@ -10,7 +10,7 @@ node('master') {
    	echo "SAST"
    	echo "${BUILD_URL}"
    sh '''curl -i -XPOST http://3.134.86.192:8086/query --data-urlencode "q=CREATE DATABASE mydb"
-curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary \'jd,STAGE=SAST,Presence=Yes\''''
+curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary \'jd,STAGE=SAST,Presence=Yes value=1\''''
 
 }
 
