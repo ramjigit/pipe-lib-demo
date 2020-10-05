@@ -26,8 +26,7 @@ target.description = 'my-new-target'
 target.url = 'http://3.134.86.192:8086'
 target.username = 'admin'
 
-// version < 2.0
-target.password = 'Rahul@18'
+target.password = hudson.util.Secret.fromString('Rahul@18')
 
 
 target.database = 'mydb'
