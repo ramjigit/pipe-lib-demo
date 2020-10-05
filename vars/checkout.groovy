@@ -19,7 +19,7 @@ echo "var1 is $var1"
 
 buildurl="$var1$build_url"
 echo " build url is $buildurl"
-curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "stagecheck,buildurl=$build_url,jobname=$jobname stagename=checkout"'''
+curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "stagecheck,buildurl=$build_url,jobname=$jobname value='checkout'"'''
 
 }
 
