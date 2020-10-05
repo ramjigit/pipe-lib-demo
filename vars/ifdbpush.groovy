@@ -49,7 +49,7 @@ influxdb.save()
    	echo "Unit testing the code"
    	def sFields = [:]
      sFields['field_k'] = 'UNITTEST'
-     influxDbPublisher  jenkinsEnvParameterField: 'KEY=${BUILD_ID}', jenkinsEnvParameterTag: 'KEY=${BUILD_URL}',customData: sFields,selectedTarget: 'js1'
+     influxDbPublisher  jenkinsEnvParameterField: 'KEY=${BUILD_ID}', jenkinsEnvParameterTag: 'KEY=${BUILD_URL}',customData: sFields,selectedTarget: 'my-new-target'
           }
 }
 }
