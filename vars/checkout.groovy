@@ -19,7 +19,7 @@ echo "var1 is $var1"
 
 buildurl="$var1$build_url"
 echo " build url is $buildurl"
-curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "jenkins_stage_data,buildurl=$build_url,jobname=$jobname,Stage=Build value=1"'''
+curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "jenkins_final_data,buildurl=$build_url,jobname=$jobname,Stage=Checkout value=1"'''
 
 }
 
