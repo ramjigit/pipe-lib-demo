@@ -8,7 +8,7 @@ node('master') {
 
    stage('Checkout') {
    	echo "Checkout source code"
-   	sh '''build_url=${BUILD_URL}
+sh '''build_url=${BUILD_URL}
 jobname=${JOB_NAME}
 
 echo "BUILD_URL is $build_url"
@@ -23,7 +23,7 @@ echo " build url is $buildurl"'''
 
 
 
-sh 'curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "jenkins_stage_data,buildurl=$build_url,jobname=$jobname,Stage=Build value=1"'
+sh 'curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "jenkins_stage_data,$buildurl,Stage=Build value=1"'
 
 }
 
