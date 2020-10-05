@@ -31,11 +31,6 @@ target.password = hudson.util.Secret.fromString('Rahul@18')
 
 target.database = 'mydb'
 
-// Optional fields
-target.retentionPolicy = '1d'                    // default = 'autogen'
-target.jobScheduledTimeAsPointsTimestamp = true  // default = false
-target.exposeExceptions = true                   // default = true
-target.usingJenkinsProxy = true                  // default = false
 
 // Add a target by using the created target object
 influxdb.addTarget(target)
