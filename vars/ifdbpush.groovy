@@ -31,7 +31,7 @@ target.password = hudson.util.Secret.fromString('Rahul@18')
 
 target.database = 'mydb'
 
-
+target.retentionPolicy = '1d'
 // Add a target by using the created target object
 influxdb.addTarget(target)
 influxdb.save()
