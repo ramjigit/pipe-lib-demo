@@ -13,10 +13,7 @@ node('master') {
 	}
    
    stage('UNIT TEST') {
-   	// Get InfluxDB plugin descriptor (version < 2.0)
-def influxdb = Jenkins.instance.getDescriptorByType(jenkinsci.plugins.influxdb.DescriptorImpl)
 
-// version >= 2.0
 def influxdb = Jenkins.instance.getDescriptorByType(jenkinsci.plugins.influxdb.InfluxDbStep.DescriptorImpl)
 
 // Create target
@@ -32,8 +29,6 @@ target.username = 'admin'
 // version < 2.0
 target.password = 'Rahul@18'
 
-// version >= 2.0
-target.password = hudson.util.Secret.fromString('Rahul@18')
 
 target.database = 'mydb'
 
