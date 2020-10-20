@@ -19,10 +19,7 @@ sh """
     if [ $ck == 1 ]
      then
               echo "BUILD_URL is buildurl"
-              echo  " jobname  is jobname"
-
-
-    fi
+                  fi
   """
 
 }
