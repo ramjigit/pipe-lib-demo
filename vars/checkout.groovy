@@ -20,7 +20,6 @@ sh """build_url=${BUILD_URL}
      then
          echo "BUILD_URL is $build_url"
 
-          echo " build url is $buildurl"
 curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s_d,buildurl=$build_url,jobname=$jobname Checkout=$ck"  
 else
 
