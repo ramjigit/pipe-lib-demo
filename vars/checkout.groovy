@@ -3,14 +3,14 @@ def call(ck){
 node('master') {
    environment {
         buildurl = "${BUILD_URL}"
-        ck=$ck
+        
         
     }
 
    stage('Checkout') {
    	echo "Checkout source code"
 sh '''build_url=${BUILD_URL}
-if [ $checkout == 1 ]
+if [ $ck == 1 ]
 then
 jobname=${JOB_NAME}
 buildid=${BUILD_ID}
