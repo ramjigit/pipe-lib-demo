@@ -22,13 +22,7 @@ buildid=${BUILD_ID}
 
 echo "BUILD_URL is $build_url"
 
-echo "Ramji Ramji Ramji"
 
-echo  "value of ck is $ck"
-
-var1="buildurl="
-
-echo "var1 is $var1"
 
 buildurl="$var1$build_url"
 echo " build url is $buildurl"
