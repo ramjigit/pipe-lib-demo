@@ -11,7 +11,9 @@ node('master') {
    stage('Checkout') {
    	echo "Checkout source code"
    	println param1
+   	ck = param1
 sh '''build_url=${BUILD_URL}
+ck = ${param1}
 echo "ck is $ck"
 if [ $ck == 1 ]
 then
