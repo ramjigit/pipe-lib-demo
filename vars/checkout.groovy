@@ -12,7 +12,7 @@ node('master') {
    	echo "Checkout source code"
    	println param1
    	ck = param1
-sh '''build_url=${BUILD_URL}
+sh """build_url=${BUILD_URL}
 
 echo "ck is $ck"
 if [ $ck == 1 ]
@@ -47,7 +47,7 @@ buildurl="$var1$build_url"
 echo " build url is $buildurl"
 echo " Ramji Ramji  Ramji"
 curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s_d,buildurl=$build_url,jobname=$jobname Checkout=ck"
-fi'''
+fi"""
 
 }
 
