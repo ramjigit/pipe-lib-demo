@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
-def call(nodename,ck){
-node(nodename) {
+def call(ck){
+node('master') {
    environment {
         buildurl = "${BUILD_URL}"
         ck=$ck
