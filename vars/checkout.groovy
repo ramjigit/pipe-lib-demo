@@ -21,7 +21,7 @@ sh """
               echo "BUILD_URL is buildurl"
               echo  " jobname  is jobname"
 
-curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=buildurl,jobname=jobname Checkout=$ck"  
+
     fi
   """
 
