@@ -40,6 +40,7 @@ echo "var1 is $var1"
 
 buildurl="$var1$build_url"
 echo " build url is $buildurl"
+echo " Ramji Ramji  Ramji"
 curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s_d,buildurl=$build_url,jobname=$jobname Checkout=$ck"
 fi'''
 
