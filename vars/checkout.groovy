@@ -17,6 +17,7 @@ sh """
 
     echo "ck is $ck"
     if [ $ck == 1 ]
+     then
               echo "BUILD_URL is buildurl"
               echo  " jobname  is jobname"
 
