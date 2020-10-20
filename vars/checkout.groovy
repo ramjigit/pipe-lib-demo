@@ -17,6 +17,8 @@ buildid=${BUILD_ID}
 
 echo "BUILD_URL is $build_url"
 
+echo "Ramji Ramji Ramji"
+
 echo  "value of ck is $ck"
 
 var1="buildurl="
