@@ -1,23 +1,27 @@
 #!/usr/bin/env groovy
-def call(){
+def call(int param1){
 node('master') {
    environment {
-        BUILD_URL = "${BUILD_URL}"
-
+        buildurl = "${BUILD_URL}"
+        jobname="${JOB_NAME}"
+        unittest=param1
+        
+        
     }
 
-   stage('UNITTEST') {
-   	echo "UNITTEST"
+   stage('unittest') {
+   	echo "unittest source code"
+   	
    	sh '''build_url=${BUILD_URL}
-jobname=${JOB_NAME}
-echo "BUILD_URL is $build_url"
-var1="buildurl="
-echo "var1 is $var1"
-buildurl="$var1$build_url"
-echo " build url is $buildurl"
-curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "jenkins_stages_data,buildurl=$build_url,jobname=$jobname,Stage=unittest unittest=1"'''
+        jobname=${JOB_NAME}
+        echo "BUILD_URL is $build_url"
+        echo "unittest value is $unittest"
+        var1="buildurl="
+        echo "var1 is $var1"
+        buildurl="$var1$build_url"
+        echo " build url is $buildurl"
+        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname unittest=$unittest"'''
 
 }
 
-}
 }
