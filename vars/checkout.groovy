@@ -4,23 +4,23 @@ node('master') {
    environment {
         buildurl = "${BUILD_URL}"
         jobname="${JOB_NAME}"
-        ck=param1
+        Checkout=param1
         
         
     }
 
    stage('Checkout') {
    	echo "Checkout source code"
-   	println param1
-   	ck = param1
-sh """
-
-    echo "ck is $ck"
-    if [ $ck == 1 ]
-     then
-              echo "BUILD_URL is buildurl"
-                  fi
-  """
+   	
+   	sh '''build_url=${BUILD_URL}
+        jobname=${JOB_NAME}
+        echo "BUILD_URL is $build_url"
+        echo "Checkout value is $Checkout"
+        var1="buildurl="
+        echo "var1 is $var1"
+        buildurl="$var1$build_url"
+        echo " build url is $buildurl"
+        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s_d,buildurl=$build_url,jobname=$jobname Checkout=$Checkout"'''
 
 }
 
