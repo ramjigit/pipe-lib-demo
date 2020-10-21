@@ -4,7 +4,7 @@ node('master') {
    environment {
         buildurl = "${BUILD_URL}"
         jobname="${JOB_NAME}"
-        ap1=param1
+        apush=param1
         
         
     }
@@ -20,7 +20,7 @@ node('master') {
         echo "var1 is $var1"
         buildurl="$var1$build_url"
         echo " build url is $buildurl"
-        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname ArtifactoryPush=$ap1"'''
+        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname artifactory=$apush"'''
 
 }
 
