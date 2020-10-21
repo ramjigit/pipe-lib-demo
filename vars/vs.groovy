@@ -20,7 +20,7 @@ node('master') {
         echo "var1 is $var1"
         buildurl="$var1$build_url"
         echo " build url is $buildurl"
-        curl -i -XPOST \'http://18.221.233.168:8086/write?db=mydb\' --data-binary "js,buildurl=$build_url,jobname=$jobname Vulnerabilityscan=$vscan"'''
+        curl -i -XPOST \'http://18.221.233.168:8086/write?db=mydb\' --data-binary "stdata,buildurl=$build_url,jobname=$jobname Vulnerabilityscan=$vscan"'''
 
 }
 
