@@ -4,13 +4,13 @@ node('master') {
    environment {
         buildurl = "${BUILD_URL}"
         jobname="${JOB_NAME}"
-        unittest=param1
+        ut=param1
         
         
     }
 
-   stage('unittest') {
-   	echo "unittest source code"
+   stage('Unittest') {
+   	echo "unit test"
    	
    	sh '''build_url=${BUILD_URL}
         jobname=${JOB_NAME}
@@ -20,7 +20,7 @@ node('master') {
         echo "var1 is $var1"
         buildurl="$var1$build_url"
         echo " build url is $buildurl"
-        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname unittest=$unittest"'''
+        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname unittest=$ut"'''
 
 }
 }
