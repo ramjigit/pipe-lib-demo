@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('Compile') {
+   stage('Compile NOT PERFORMED') {
    	echo "Compile source code NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}

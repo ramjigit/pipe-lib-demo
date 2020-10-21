@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('Vulnerabilityscan') {
+   stage('Vulnerabilityscan NOT PERFORMED') {
    	echo "Vulnerabilityscan NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}

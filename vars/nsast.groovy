@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('sast') {
+   stage('sast NOT PERFORMED') {
    	echo "sast NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}

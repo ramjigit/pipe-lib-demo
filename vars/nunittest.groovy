@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('Unittest') {
+   stage('Unittest NOT PERFORMED') {
    	echo "Unittest NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}

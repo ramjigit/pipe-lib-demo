@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('BVT') {
+   stage('BVT NOT PERFORMED') {
    	echo "BVT  NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}

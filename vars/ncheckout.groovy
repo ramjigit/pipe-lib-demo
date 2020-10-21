@@ -9,7 +9,7 @@ node('master') {
         
     }
 
-   stage('Checkout') {
+   stage('Checkout NOT PERFORMED') {
    	echo "Checkout source code NOT PERFORMED"
    	
    	sh '''build_url=${BUILD_URL}
