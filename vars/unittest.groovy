@@ -23,5 +23,5 @@ node('master') {
         curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname unittest=$unittest"'''
 
 }
-
+}
 }
