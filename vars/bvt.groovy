@@ -20,7 +20,7 @@ node('master') {
         echo "var1 is $var1"
         buildurl="$var1$build_url"
         echo " build url is $buildurl"
-        curl -i -XPOST \'http://3.134.86.192:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname BVT=$BVT"'''
+        curl -i -XPOST \'http://18.221.233.168:8086/write?db=mydb\' --data-binary "j_s,buildurl=$build_url,jobname=$jobname BVT=$BVT"'''
 
 }
 
