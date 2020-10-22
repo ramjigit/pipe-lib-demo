@@ -16,7 +16,7 @@ node('master') {
   def job = Jenkins.instance.items.find { it.name == "${JOB_NAME}" }
    for (build in job.builds) {
       def log = build.log
-      if (log.contains('checkout' )  &&  (${build.id} == ${bd})) {
+      if (log.contains('checkout' )  &&  ("${build.id}" == "${bd}" )) {
        println "${job.name}: ${build.id}"
                        }
                     }
