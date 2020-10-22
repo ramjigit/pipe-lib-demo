@@ -20,7 +20,8 @@ node('master') {
       if (log.contains('bbbbbbb' )  &&  ("${build.id}" == "${BUILD_ID}" )) {
        println "${job.name}: ${build.id}"
       else
-         println "bbbbbb is not present in the log"
+      {
+         println "bbbbbb is not present in the log"}
                        }
                     }
 
