@@ -1,0 +1,61 @@
+ @Library('jenkins-metrics-lib@test_influx_zero')_
+ 
+ if (params.Checkout==1)
+ {
+ checkout(1)
+ }
+ else 
+ {
+     checkout(0)
+ }
+ 
+ 
+  if (params.Compile==1)
+ {
+ compile(1)
+ }
+ else 
+ {
+     compile(0)
+ }
+  if (params.ut==1)
+ {
+ unittest(1)
+ }
+ else 
+ {
+     unittest(0)
+ }
+  if (params.BVT==1)
+ {
+ bvt(1)
+ }
+ else 
+ {
+     bvt(0)
+ }
+ if (params.SAST==1)
+ {
+ sast(1)
+ }
+ else 
+ {
+     sast(0)
+ }
+ if (params.vscan==1)
+ {
+ vs(1)
+ }
+ else 
+ {
+     vs(0)
+ }
+ if (params.apush==1)
+ {
+ ap(1)
+ }
+ else 
+ {
+     ap(0)
+ }
+ 
