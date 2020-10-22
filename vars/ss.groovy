@@ -10,9 +10,9 @@ node('master') {
         
     }
 
-   stage('Push 0 to stages not perfoemed') {
+   stage('Push 0 to stages not performed') {
    	
-def job = Jenkins.instance.items.find { it.name == jobname }
+def job = Jenkins.instance.items.find { it.name == "${JOB_NAME}" }
 for (build in job.builds) {
   def log = build.log
   if (log.contains(BUILD_STRING)) {
