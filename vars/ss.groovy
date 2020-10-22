@@ -16,9 +16,9 @@ node('master') {
   if (log.contains('checkout()')) {
     println "checkout stage present"
   }
-}
+       }
 
-}
+
 
 }
 }
