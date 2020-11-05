@@ -32,7 +32,7 @@ node('master') {
     def myCustomMeasurementFields = [:]
      myFields1['unittest'] =  Checkout
      myFields1['Total']  = 1
-     myCustomMeasurementFields['scorecard'] = myFields1
+     myCustomMeasurementFields['score'] = myFields1
      //myTags = ['scorecard':['buildurl':"test",'JOB_NAME':"test1"]]
      myTags = ['scorecard':['buildurl':BUILD_URL,'JOBNAME':JOB_NAME]]
      influxDbPublisher(selectedTarget: 'my-new-target', customDataMap: myCustomMeasurementFields, customDataMapTags: myTags)
