@@ -1,28 +1,41 @@
 #!/usr/bin/env groovy
+
 def call(int param1){
 node('master') {
-   environment {
-        buildurl = "${BUILD_URL}"
-        jobname="${JOB_NAME}"
-        Checkout=param1
-        
-        
-    }
+  environment{
+    BUILD_ID=${BUILD_ID}
+    BUILD_URL=${BUILD_URL}
+    JOB_NAME=${JOB_NAME}
+    Checkout=param1
+          }
 
+
+  
+   
    stage('Checkout') {
-   	echo "Checkout source code"
-   	
-   	sh '''build_url=${BUILD_URL}
-        jobname=${JOB_NAME}
-        echo "BUILD_URL is $build_url"
-        echo "Checkout value is $Checkout"
-        var1="buildurl="
-        echo "var1 is $var1"
-        buildurl="$var1$build_url"
-        echo " build url is $buildurl"
-        curl -i -XPOST \'http://18.221.233.168:8086/write?db=mydb\' --data-binary "stdata,buildurl=$build_url,jobname=$jobname Checkout=$Checkout"'''
+    echo "Checking out the code"
+        
+     def influxdb = Jenkins.instance.getDescriptorByType(jenkinsci.plugins.influxdb.InfluxDbStep.DescriptorImpl)
 
-}
+               // Create target
+    def target = new jenkinsci.plugins.influxdb.models.Target()
 
+               // Set target details
+
+               // Mandatory fields
+    target.description = 'my-new-target'
+    target.url = 'http://3.131.85.206:8086'
+    target.database = 'mydb'
+    influxdb.addTarget(target)
+    influxdb.save()
+    def myFields1 = [:]
+    def myCustomMeasurementFields = [:]
+     myFields1['unittest'] =  Checkout
+     myFields1['Total']  = 1
+     myCustomMeasurementFields['scorecard'] = myFields1
+     //myTags = ['scorecard':['buildurl':"test",'JOB_NAME':"test1"]]
+     myTags = ['scorecard':['buildurl':BUILD_URL,'JOBNAME':JOB_NAME]]
+     influxDbPublisher(selectedTarget: 'my-new-target', customDataMap: myCustomMeasurementFields, customDataMapTags: myTags)
+          }
 }
 }
